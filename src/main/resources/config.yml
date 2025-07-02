@@ -1,0 +1,50 @@
+# Configuración del Plugin TPHistory
+# verion: v1.0
+# Creador: @tewentyheavens (Discord)
+
+# Configuración de la base de datos
+database:
+  # El nombre del archivo de la base de datos SQLite que se generará.
+  # Se guardará dentro de la carpeta del plugin (plugins/TPHistory/)
+  filename: "tphistory.db" # No cambies el ".db"
+
+# Configuración del comando de teletransporte para el click en el historial
+teleport-command:
+  # Define el comando que se usará para teletransportarse al hacer clic en una entrada de historial.
+  # Puedes usar los siguientes placeholders:
+  # %world% : El nombre del mundo de destino.
+  # %x%     : La coordenada X de destino (entero).
+  # %y%     : La coordenada Y de destino (entero).
+  # %z%     : La coordenada Z de destino (entero).
+  #
+  # Ejemplo: "/tpopos %x% %y% %z% %world%" (Este es el valor por defecto)
+  # Ejemplo: "/minecraft:tp %x% %y% %z% %world%"
+  # Ejemplo: "/essentials:tppos %x% %y% %z%" (si no necesitas el mundo en caso de usar otro plugin)
+  teleport-command-format: "/tpopos %x% %y% %z% %world%" #Puedes editar esto!
+
+# Configuración de las funcionalidades principales
+settings:
+  # Número máximo de teletransportes a guardar por jugador.
+  # Si se añade un nuevo teleport y se supera este límite,
+  # se eliminará el registro más antiguo para ese jugador.
+  max-teleport-history-per-player: 100
+
+# Permisos
+permissions:
+  tphistory.command.use:
+    description: Permite usar el comando tphist y sus aliases.
+    default: true # O 'op' si prefieres que solo los OPs puedan usarlo por defecto.
+
+  tphistory.command.reload:
+    description: Permite recargar la configuración del plugin.
+    default: op # Solo operadores deberían poder recargar la configuración.
+
+  tphistory.command.listplayers:
+    description: Permite ver el historial de teletransportaciones de otros jugadores.
+    default: op # Solo operadores deberían poder ver el historial de otros por defecto.
+                # Si quieres que se pueda delegar a usuarios no-OP, pon 'false'.
+
+  tphistory.command.playerpages:
+    description: Permite especificar una página al ver el historial de otros jugadores.
+    default: op # Recomendado 'op'. Si un usuario tiene 'tphistory.command.listplayers'
+                # pero no este, solo podrá ver la primera página del historial de otros.
