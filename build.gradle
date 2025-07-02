@@ -1,0 +1,52 @@
+plugins {
+    id 'java'
+    id("xyz.jpenilla.run-paper") version "2.2.4"
+}
+
+group = 'com.trickypr.BossesMax'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+    maven {
+        name = "papermc-repo"
+        url = "https://repo.papermc.io/repository/maven-public/"
+    }
+    maven {
+        name = "sonatype"
+        url = "https://oss.sonatype.org/content/groups/public/"
+    }
+}
+
+dependencies {
+    // Apuntamos a la API de Paper para la versión 1.21.x
+    // Usa "1.21-R0.1-SNAPSHOT" para la última versión de desarrollo de Paper 1.21.
+    // Si hay una versión estable de 1.21 disponible (ej. 1.21.1, 1.21.2), la usarías sin -SNAPSHOT.
+    compileOnly "io.papermc.paper:paper-api:1.21-R0.1-SNAPSHOT"
+}
+
+// Para Minecraft 1.21.x, Java 21 o superior es **obligatorio** para compilar.
+def targetJavaVersion = 21
+java {
+    def javaVersion = JavaVersion.toVersion(targetJavaVersion)
+    sourceCompatibility = javaVersion
+    targetCompatibility = javaVersion
+    
+    // Configura el toolchain para asegurar que Gradle usa JDK 21 para compilar
+    toolchain.languageVersion = JavaLanguageVersion.of(targetJavaVersion)
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.release = targetJavaVersion
+}
+
+jar {
+    archiveFileName = "${rootProject.name}-${version}.jar"
+}
+
+tasks {
+    runServer {
+        // Especifica la versión exacta de Paper a descargar (la última de 1.21)
+        minecraftVersion("1.21") // O "1.21.0", "1.21.1" si hay versiones más específicas.
+    }
+}

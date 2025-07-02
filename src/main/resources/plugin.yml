@@ -1,0 +1,27 @@
+name: BossesMax
+main: net.ddns.vcccd.Main
+version: 1.0.0
+author: Gwentym
+api-version: '1.21'
+
+commands:
+    bossesmax:
+        description: Abre la guia
+        usage: /<commando>
+        permission: bossesmax.use
+    removebars:
+        description: Remueve todas las bossbars
+        usage: /<commando>
+        permission: bossesmax.removerbars
+    espadadeladmin:
+        description: Con esto matas a lo que sea
+        usage: /<commando>
+        permission: bossesmax.espadadeladmin
+    spawnboss:
+        description: Spawnea un boss con este comando
+        usage: /<commando> <boss>
+        permission: bossesmax.spawn.velsebu_bathin 
+    despawnentities:
+        description: Despawnea una entidad especifica
+        usage: /<commando> <tipo_de_entidad>
+        permission: bossesmax.despawncommand

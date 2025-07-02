@@ -1,0 +1,26 @@
+# Cambia esto a verdadero si quieres que los jefes aparezcan en el mundo.
+SpawnInWorld: false
+
+# Mundos en los que aparecerán (deben estar separados por comas y sin espacios)
+Worlds: world,city
+
+# Cuanto mayor sea el número, menos posibilidades hay de que aparezca un jefe en el mundo.
+SpawnRNG: 500
+
+# Opciones para qué jefes aparecen en el mundo (¡DEBE ESTABLECER SpawnInWorld EN TRUE!)
+# BelzebuthSpawn: Establece a 'true' si quieres que Belzebuth pueda aparecer de forma natural.
+BelzebuthSpawn: true
+# BathinSpawn: Establece a 'true' si quieres que Bathin pueda aparecer de forma natural.
+BathinSpawn: true
+
+# Opciones para que los jefes desaparezcan en los mundos seleccionados si el jugador se aleja mucho.
+# BelzebuthDeSpawn: Establece a 'true' para que Belzebuth desaparezca si nadie está cerca.
+BelzebuthDeSpawn: true
+# BathinDeSpawn: Establece a 'true' para que Bathin desaparezca si nadie está cerca.
+BathinDeSpawn: true
+
+# Establece la salud de los diferentes jefes.
+# BelzebuthHealth: Define la cantidad de vida de Belzebuth.
+BelzebuthHealth: 300
+# BathinHealth: Define la cantidad de vida de Bathin.
+BathinHealth: 300
