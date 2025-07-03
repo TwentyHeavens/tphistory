@@ -1,0 +1,73 @@
+# lang.yml (VERSIÓN FINAL CON PREFIJO, COLORES Y SEPARADORES)
+messages:
+  # PREFIJO DEL PLUGIN - Se añade automáticamente a la mayoría de los mensajes
+  prefix: "&e・&aTPHistory&e・&f» " # Ejemplo: ・TPHistory・
+
+  # Formato de fecha para el historial de teletransportes
+  # Puedes usar cualquier patrón válido de SimpleDateFormat.
+  # Ejemplos: "dd-MM-yyyy hh:mm a", "MM/dd/yyyy HH:mm:ss", "yyyy.MM.dd G 'at' HH:mm:ss z"
+  date-format: "dd-MM-yyyy hh:mm a"
+
+  # Para el encabezado del historial:
+  # ATENCION: Este mensaje NO lleva el prefijo del plugin añadido automáticamente por el código.
+  player-history-header: "&6--- &bHistorial de Teletransportes para &a%player% &6---"
+
+  # Mensaje cuando la página solicitada excede el número de páginas con entradas.
+  page-out-of-bounds: "&cLa página &b%requested_page% &cexcede el total de páginas (&b%total_pages%&c) para &e%player%&c."
+
+  # Mensaje cuando una página es válida pero no tiene entradas.
+  no-entries-on-page: "&cEl jugador &e%player% &cno tiene entradas en la página &f%page%&c."
+
+  # Mensaje para la información de la página actual/total
+  pagination-info: "&7Página &a%current_page%&7/&a%total_pages%" # Ejemplo: Página 1/5
+
+  # El resto de los mensajes...
+  no-permission: "&cNo tienes permiso para ejecutar este comando."
+  player-only-command: "&cEste comando solo puede ser ejecutado por un jugador."
+  reload-success: "&a¡Configuración recargada exitosamente!" # Color verde claro
+  reload-fail: "&cError al recargar la configuración. Revisa la consola para más detalles."
+  error-retrieving-history: "&cOcurrió un error al obtener el historial de teletransporte." # Nuevo mensaje
+  teleported-success: "&a¡Teletransportacion exitosa!"
+  world-not-found: "&c¡Error! El mundo &e%world% &cno fue encontrado o no está cargado." # Nuevo mensaje
+  invalid-teleport-coords: "&c¡Error! Coordenadas de teletransporte inválidas." # Nuevo mensaje
+
+  # Mensaje de ayuda para el clic - dividido para colores
+  # ATENCION: El prefijo NO se añade automáticamente a estas líneas (teleport-click-info-base y teleport-click-info-command).
+  teleport-click-info-base: "&aSi no puedes clickear, usa: &r" # Parte verde
+  teleport-click-info-command: "&d/tpopos [X[ [Y] [Z] [mundo]" # Corregido a /tphist para reflejar el comando interno
+  #solo es un ejemplo del teletransporte manuel.
+  teleport-manual-info: "&aSi no puedes clickear, usa: &d/tphist <X> <Y> <Z> <mundo>" # Para consola, corregido a /tphist
+
+  # Nuevos mensajes para páginas
+  invalid-arguments: "&cArgumentos inválidos. Uso: %usage%"
+  tphist-usage: "&a/%command_alias% player <username> [page]" # Actualizado para reflejar la paginación
+  no-history-found: "&cNo se encontró historial de teletransportaciones para &e%player%&c."
+
+  # Bloque de una sola página: Separador entre entradas
+  # ATENCION: El prefijo NO se añade automáticamente a este mensaje.
+  teleport-separator: "&b-----------------------------------------------------"
+
+  # TELEPORT-ENTRY AHORA ESTÁ SEPARADO EN VARIAS CLAVES Y SIN "Desde:", "A:"
+  # ATENCION: El prefijo NO se añade automáticamente a la línea completa de la entrada de teletransporte.
+  teleport-entry-timestamp: "&7[%timestamp%] "
+  teleport-entry-coords: "&f%.0f &f%.0f &f%.0f "
+  # AQUI EL CAMBIO: Añadido un espacio al final para evitar concatenación visual
+  teleport-entry-world: "&8[&e%world%&8] "
+  teleport-entry-arrow: " &f-> "
+  teleport-entry-coords-to: "&a%.0f &a%.0f &a%.0f "
+  # AQUI EL CAMBIO: Añadido un espacio al final para evitar concatenación visual
+  teleport-entry-world-to: "&8[&a%world%&8] "
+
+  # Mensajes de HOVER para la paginación
+  hover-pagination-previous: "&7Haz clic para ir a la página anterior."
+  hover-pagination-next: "&7Haz clic para ir a la página siguiente."
+
+  # Mensajes de HOVER para las coordenadas
+  hover-from-coords: "&eOrigen:\n&fX: %x%\nY: %y%\nZ: %z%\nMundo: %world%"
+  hover-to-coords: "&aDestino:\n&fX: %x%\nY: %y%\nZ: %z%\nMundo: %world%"
+
+  # COLORES DE PAGINACIÓN A NARANJA
+  # ATENCION: El prefijo SE AÑADE automáticamente al inicio de la línea de paginación.
+  pagination-previous: "&2« &6Anterior" # Naranja
+  pagination-next: "&6Siguiente &a»" # Naranja
+  pagination-separator: " &8| "

@@ -1,0 +1,30 @@
+name: TPHistory
+version: 3.0
+description: Este Plugin es para darle seguimiento a los teletransportes.
+author: TwentyHeavens
+main: com.trickypr.tpHistory.TeleportTracerPlugin
+api-version: 1.21
+
+commands:
+  tphist:
+    description: Comandos para el historial de teletransportaciones.
+    usage: /<command> [player] [page]
+    aliases: [tph]
+    permission: tphistory.command.use 
+    permission-message: "&cNo tienes permiso para usar este comando." 
+
+permissions:
+  tphistory.command.use:
+    description: Permite usar el comando tphist y sus aliases.
+    default: op 
+  tphistory.command.reload:
+    description: Permite recargar la configuración del plugin.
+    default: op
+  tphistory.command.listplayers:
+    description: Permite ver el historial de teletransportaciones de otros jugadores.
+    default: op
+    children:
+      tphistory.command.playerpages: true
+  tphistory.command.playerpages:
+    description: Permite especificar una página al ver el historial de otros jugadores.
+    default: op
